@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>함수지향 - 유효범위</title>
+</head>
+<body>
+  <pre>
+    # 함수안에서 변수타입을 쓰지않으면 전역변수를 덮어씌운다.
+    # 전역변수가 꼭 필요하지 않으면 지역변수를 쓰는걸 선호하자.
+    # 지역변수는 마치 디렉토리와 비슷하다.
+
+  </pre>
+  <script>
+    // 예제 1
+    /* let vscope = 'global';
+    function fscope(){
+      let vscope = 'local';
+      vscope = 'local'; // 함수내에 지역변수가 선언되어 있으므로 지역변수 vscope를 덮어쒸운다
+    };
+    fscope();
+    console.log(vscope); */
+
+
+    // 예제 2 (무한루프가 발생하므로 주의)
+    /* function a (){
+      i = 0;
+    };
+    for(let i = 0; i < 5; i++){
+      a(); // a함수 안에있는 i변수가 for i 전역변수를 덮어씌워서 무한루프가 발생한다.
+      document.write(i);
+    } */
+
+
+    // 예제 3 (전역변수를 불가피하게 사용해야 할 때, 객체화)
+    /* (function(){
+      let MYAPP = {};
+      MYAPP.calculator = {
+        'left' : null,
+        'right' : null
+      };
+      MYAPP.coordinate = {
+        'left' : null,
+        'right' : null
+      };
+      MYAPP.calculator.left = 10;
+      MYAPP.calculator.right = 20;
+      function sum(){
+        return MYAPP.calculator.left + MYAPP.calculator.right;
+      };
+      console.log(sum());
+    }()); */
+
+
+    // 예제 4 (유효범위의 대상 (함수))
+    /*
+      자바스크립트의 지역변수는 함수에서만 유효하다.
+    */
+
+
+    // 예제 5 (정적 유효범위)
+    /*  let i = 5;
+
+    function a(){
+      let i = 10;
+      b(); // b()가 호출할 당시에 i라는 지역변수가 없으므로 전역변수 i = 5를 가져온다.
+    };
+    
+    function b(){
+      document.write(i);
+    };
+    a(); */
+  </script>
+</body>
+</html>

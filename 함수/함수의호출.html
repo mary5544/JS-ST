@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>함수지향 - 함수의호출</title>
+</head>
+<body>
+  <pre>
+    #
+  </pre>
+  <script>
+    // apply 호출
+    /* function sum(arg1, arg2){
+      return arg1 + arg2;
+    };
+    console.log(sum.apply(null, [4, 2])); */
+
+    
+    // apply 사용
+    o1 = {val1 : 1, val2 : 2, val3 : 3};
+    o2 = {v1 : 10, v2 : 20, v3 : 30};
+    function sum(){
+      let _sum = null;
+      for(name in this){
+        _sum += this[name];
+      };
+      return _sum;
+    };
+    console.log(sum.apply(o1));
+    console.log(sum.apply(o2));
+  </script>
+</body>
+</html>

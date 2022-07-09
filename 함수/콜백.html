@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>함수지향 - 콜백과 클로저</title>
+</head>
+<body>
+  <pre>
+    # 자바스크립트에선 함수도 객체이다. 즉 일종의 값이다.
+    # 변수, 매개변수, 리턴값 용도로 사용할수 있는 데이터를 first - class - citizen 이라고 부른다.
+  </pre>
+
+  <script>
+    // 예제 1 (값으로서의 함수)
+    // function a(){} === let a = function(){}
+    /* a = {
+      b : function(){
+        // 객체안의 함수는 메소드라고 부른다.
+      }
+    } */
+
+    /* function cal(func, num){
+      return func(num);
+    }
+    function inc(num){
+      return num + 1;
+    }
+    function dec(num){
+      return num - 1;
+    }
+    console.log(cal(inc, 10));
+    console.log(cal(dec, 10)); */
+
+    /* function cal(mode){
+      let funcs = {
+        'plus' :  function(num1, num2){return num1 + num2},
+        'minus' :  function(num1, num2){return num1 - num2}
+      };
+      return funcs[mode];
+    };
+    console.log(cal('plus')(2, 1));
+    console.log(cal('minus')(2, 1)); */
+
+    /* let process = [
+      function(input){return input + 10;},
+      function(input){return input * input;},
+      function(input){return input / 2;},
+    ];
+    let input = 1;
+    for(let i = 0; i < process.length; i++){
+      input = process[i](input);
+    };
+    console.log(input); */
+
+
+    // 예제 2 (콜백)
+    /* let numbers = [20, 10, 1, 2, 50, 5, 30, 3];
+    let SortCustom = (a, b) => {return a - b};
+    console.log(numbers.sort(SortCustom)); */
+  </script>
+</body>
+</html>

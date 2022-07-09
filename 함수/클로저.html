@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>함수지향 - 클로저</title>
+</head>
+<body>
+  <pre>
+    # 클로저는 내부함수가 외부함수에 접근할 수 있는것을 말함
+    # 내부함수에 해당 변수가 없으면 외부함수의 변수를 가지게된다.
+    # private variable은 정보를 아무나 수정하지 못하게 하기위해 사용
+  </pre>
+  <script>
+    // 예제 1 (내부함수)
+    /* function outter(){
+      let title = '외부함수 입니다.';
+
+      function inner(){
+        console.log(title);
+      };
+      inner();
+    };
+    outter(); */
+
+
+    // 예제 2 (클로저)
+    /* function outter(){
+      let title = 'Hello'
+      return function(){
+        console.log(title);
+      }
+    };
+    inner = outter();
+    inner(); */
+
+
+    // 예제 3 (private variable)
+    /* function factory_movie(title){
+      return {
+        get_title : function(){
+          return title;
+        },
+        set_title : function(_title){
+          title = _title;
+        }
+      }
+    }
+    ghost = factory_movie('Ghost in the shell');
+    matrix = factory_movie('Matrix');
+    console.log(ghost.get_title());
+    console.log(matrix.get_title());
+    ghost.set_title('공각기동대');
+    console.log(ghost.get_title());
+    console.log(matrix.get_title()); */
+
+
+    // 예제 4 (클로저의 응용)
+    let arr = [];
+    for(let i = 0; i < 5; i++){
+      arr[i] = function(){
+        return i;
+      };
+    };
+    for(let index in arr){
+      console.log(arr[index]());
+    };
+  </script>
+</body>
+</html>

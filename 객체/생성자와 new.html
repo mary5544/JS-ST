@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>객체 - 생성자와 new</title>
+</head>
+<body>
+  <pre>
+    # 생성자는 객체를 만드는 역할을 하는 함수다.
+    # 함수에 new를 붙이면 객체를 리턴한다.
+    # 생성자는 초기화를 담당한다.
+  </pre>
+  <script>
+    // 이러한 코드는 객체 사이에 다른게 끼어들 가능성이 있다.
+    /* (function(){
+      let preson = {};
+      person.name = 'mary5544';
+      person.introduce = function(){
+        return 'My name is ' + this.name;
+      };
+      console.log(person.introduce());
+    }()); */
+
+    // 보완버전
+    /* (function(){
+      let person = {
+        'name' : 'mary5544',
+        'introduce' : function(){
+          return 'My name is ' + this.name;
+        },
+      };
+      console.log(person.introduce());
+    }()); */
+
+
+    // 중복이 발생함
+    /* (function(){
+      let person_1 = {
+        'name' : 'mary5544',
+        'introduce' : function(){
+          return 'My name is ' + this.name;
+        },
+      };
+
+      let person_2 = {
+        'name' : 'Sung Min',
+        'introduce' : function(){
+          return 'My name is ' + this.name;
+        },
+      };
+      console.log(person_1.introduce());
+      console.log(person_2.introduce());
+    }()); */
+
+
+    // 생성자 생성
+    /* function Person(){};
+
+    let p = new Person();
+    p.name = 'mary5544';
+    p.introduce = function(){
+      return 'My name is ' + this.name;
+    };
+    console.log(p.introduce()); */
+
+
+    // 생성자를 활용하여 중복을 개선한 코드
+    function Person(name){
+      this.name = name;
+      this.introduce = function(){
+        return 'My name is ' + this.name;
+      };
+    };
+    let P1 = new Person('mary5544');
+    let P2 = new Person('Sung Min');
+    console.log(`
+      ${P1.introduce()}
+      ${P2.introduce()}
+    `);
+  </script>
+</body>
+</html>

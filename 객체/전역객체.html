@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>객체 - 전역객체</title>
+</head>
+<body>
+  <pre>
+    # window 전역객체는 생략이 가능하다.
+  </pre>
+  
+  <script>
+    /* function func(){
+      console.log('Hello?');
+    };
+    // 함수의 호출 방법
+    func(); // 1
+    window.func(); // 2 */
+
+    let o = {'func' : function(){
+      console.log('Hello?');
+    },};
+    o.func();
+    window.o.func();
+  </script>
+</body>
+</html>
