@@ -1,0 +1,16 @@
+@import './font.css';
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  font-size: 100%;
+  box-sizing: border-box;
+}
+body{
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: #f3f3f3;
+}

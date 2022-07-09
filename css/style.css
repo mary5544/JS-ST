@@ -1,0 +1,52 @@
+@import './reset.css';
+
+#contents{
+  /* width: 1200px; */
+  display: flex;
+}
+
+#contents > .JS-layout{
+  width: 306px;
+  height: 306px;
+  position: relative;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: .2s ease;
+}
+#contents > .JS-layout:hover{
+  background-color: #e4c05f;
+  box-shadow: 3px 3px 8px 0px #0000005d;
+}
+#contents > .JS-layout:nth-child(n+2){margin-left: 214px;}
+#contents > .JS-layout > .info{
+  display: inline-block;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#contents > .JS-layout > .info > .icon{
+  display: inline-block;
+  width: 88px;
+  height: 88px;
+  background-image: url('../img/icon/clarity_world-line.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#contents > .JS-layout > .info > h2{
+  font-size: 46px;
+  margin-top: 14px;
+}
+#contents > .JS-layout > .info > span{
+  display: inline-block;
+  font-size: 14px;
+  margin-top: 20px;
+  padding: 4px 14px;
+  border-radius: 10px;
+  transition: .2s ease;
+}
+#contents > .JS-layout:hover > .info > span{
+  background-color: rgba(227, 227, 227, 0.278);
+}
