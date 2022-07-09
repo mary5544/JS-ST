@@ -1,1 +1,1 @@
-# ideal-octo-chainsaw
+# 자바스크립트 공부한거 올리는 디렉토리
