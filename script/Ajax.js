@@ -23,7 +23,7 @@ if(location.pathname === '/data/sub_02.html'){
         let tags = '';
         for(Arr in ArrList){
           let list = ArrList[Arr].trim();
-          let tag = `<a class='List' href="../data/함수/${list}.html">${list}.html</a>`;
+          let tag = `<a class='List' href="../data/객체/${list}.html">${list}.html</a>`;
           tags += tag;
         };
         document.getElementById('StudyList').innerHTML = tags;
