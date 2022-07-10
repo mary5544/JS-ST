@@ -1,0 +1,114 @@
+@import './reset.css';
+
+body{
+  /* display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center; */
+  background: #f3f3f3;
+}
+
+/* Sub */
+
+#contents{text-align: center;}
+#contents > #backbtn{
+  margin: 80px auto 0 auto;
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: #EDEDED;
+  cursor: pointer;
+  transition: .2s ease;
+}
+#contents > #backbtn:hover{
+  transform: scale(.8);
+}
+#contents > #backbtn > .icon{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  background: url('../img/icon/arcticons_folder-home.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#contents > .JS-layout{
+  width: 306px;
+  height: 306px;
+  display: inline-block;
+  position: relative;
+}
+#contents > .JS-layout > .info{
+  display: inline-block;
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#contents > .JS-layout > .info > .icon{
+  display: inline-block;
+  width: 88px;
+  height: 88px;
+  background-image: url('../img/icon/clarity_world-line.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+#contents > .JS-layout > .info > h2{
+  font-size: 46px;
+  margin-top: 14px;
+}
+#contents > .JS-layout > .info > span{
+  display: inline-block;
+  font-size: 14px;
+  margin-top: 20px;
+  padding: 4px 14px;
+}
+
+#contents > #StudyList{
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  grid-row-gap: 40px;
+  justify-content: space-between;
+  width: 1640px;
+  margin: auto;
+}
+#contents > #StudyList > a{
+  width: 280px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 14px;
+  background-color: #e4c05f;
+  box-shadow: 3px 3px 8px 0px #0000005d;
+  text-decoration: none;
+  color: #010101;
+  font-size: 20px;
+}
+
+@media (max-width: 1640px){
+  #contents > #StudyList{
+    grid-template-columns: auto auto auto;
+    width: 1200px;
+  }
+  #contents > #StudyList > a{
+    width: 280px;
+    height: 50px;
+  }
+}
+@media (max-width: 1250px){
+  #contents > #StudyList{
+    grid-template-columns: auto;
+    justify-content: center;
+    width: 100%;
+  }
+  #contents > #StudyList > a{
+    width: 280px;
+    height: 50px;
+  }
+}
