@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>객체 - 상속</title>
+  <!-- <link rel="stylesheet" href="./"> -->
+</head>
+<body>
+  <pre>
+    # 상속은 로직을 그대로 물려 받는 또 다른 객체를 만들 수 있는 기능을 의미한다.
+  </pre>
+  <script>
+    // [1]
+    (function(){
+      function Person(name){
+        this.name = name;
+        this.introduce = function(){
+          return 'My name is ' + this.name;
+        };
+      };
+      let P1 = new Person('mary5544');
+      console.log(P1.introduce());
+    }());
+
+    // [2 - 상속이란?]
+    (function(){
+      function Person(name){
+        this.name = name;
+        };
+        Person.prototype.name = null;
+        Person.prototype.introduce = function(){
+          return 'My name is ' + this.name;
+        };
+      let P1 = new Person('Sung Min');
+      console.log(P1.introduce());
+    }());
+
+    // [3 - 상속의 사용방법]
+    (function(){
+      function Person(name){
+        this.name = name;
+      };
+      Person.prototype.name = null;
+      Person.prototype.introduce = function(){
+        return 'My name Is ' + this.name;
+      };
+
+      function designer(name){
+        this.name = name;
+      }
+      designer.prototype = new Person();
+      let P1 = new designer('MIN');
+      console.log(P1.introduce());
+    }());
+
+    // [4 - 기능추가]
+    (function(){
+      function Person(name){
+        this.name = name;
+      };
+      Person.prototype.name = null;
+      Person.prototype.introduce = function(){
+        return 'My name Is ' + this.name;
+      };
+
+      function designer(name){
+        this.name = name;
+      }
+      designer.prototype = new Person();
+      designer.prototype.type = 'designer'
+      let P1 = new designer('MIN');
+      console.log(P1.introduce());
+      console.log(P1.type);
+
+      function programmer(name){
+        this.name = name;
+      }
+      programmer.prototype = new Person();
+      programmer.prototype.type = 'programmer'
+      let P2 = new programmer('MIN');
+      console.log(P2.introduce());
+      console.log(P2.type);
+    }());
+  </script>
+</body>
+</html>
