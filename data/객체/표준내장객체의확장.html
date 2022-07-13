@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>객체 - 표준 내장 객체의 확장</title>
+</head>
+<body>
+  <pre>
+    # 표준 내장 객체 (Standaro Built-in Object)는 자바스크립트가 기본적으로
+      가지고 있는 객체를 의미.
+      
+      JavaScript    ->   Js개발자   ->    User
+        (기본적인 기능제공 API)    (UI 제공)
+
+
+      자바스크립트 내장 객체
+      -----------------------
+      - Object
+      - Function
+      - Array
+      - String
+      - Boolean
+      - Number
+      - Math
+      - Date
+      - RegExp (정규표현식)
+
+      사용자가 직접 정의하여 사용하는 객체를 [사용자 지정 객체] 라고한다
+      
+  </pre>
+
+  <script>
+    // 배열의 확장
+    /* (function(){
+      let arr = new Array('서울', '대구', '대전', '부산');
+  
+      function GetRandomArray(arr){
+        let random = (Math.round(arr.length * Math.random()) - 1);
+        let result = null;
+
+        if(random < 0){
+          result = random + 1;
+        } else{
+          result = random;
+        };
+        
+        return arr[result];
+      };
+
+      console.log(GetRandomArray(arr));
+    }()); */
+
+    /* (function(){
+      let arr = new Array('서울', '대구', '대전', '부산');
+  
+      function GetRandomArray(arr){
+        let index = Math.floor(arr.length * Math.random());
+        
+        return arr[index];
+      };
+
+      console.log(GetRandomArray(arr));
+    }()); */
+
+
+    // 배열의 확장 - prototype 활용
+    (function(){
+      Array.prototype.random = function(){
+        const index = Math.floor(this.length * Math.random());
+        return this[index];
+      };
+      const arr = new Array('ㅇㅈ', 'ㄴㅇㅈ', 'ㄴㅇㅅ', 'ㅋㅋㅋ', 'ㄴㅇㄱ');
+      
+      console.log(arr.random());
+    }());
+  </script>
+</body>
+</html>

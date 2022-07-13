@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>객체 - Object</title>
+  <style>
+    *{color: rgb(242, 242, 242);}
+    body{background-color: rgb(44, 44, 44);}
+  </style>
+</head>
+<body>
+  <pre>
+    # Object 객체는 객체의 기본적인 형태를 가지고 있는 객체이다.
+    # Object는 모든요소의 최초의 조상
+
+    [기본형태]
+    ---------
+    const obj = {'key_1' : 1, 'key_2' : 2, 'key_3' : 3};
+  </pre>
+
+  <script>
+    /* (function(){
+      // Object.keys(value) : 객체의 key값을 리턴해주는 매소드
+      const o1 = ['A1', 'A2', 'A3', 'A4'];
+      console.log(Object.keys(o1));
+
+      // Object.prototype.toString() : Value값을 나열
+      const o2 = new Array('A1', 'A2', 'A3', 'A4');
+      console.log(o2.toString());
+    }()); */
+
+
+    // Object의 확장
+    (function(){
+      Object.prototype.contain = function(value){
+        let t1 = Object.keys(this);
+        console.log(t1);
+        let t2 = this.toString();
+        console.log(t2);
+        
+      };
+
+      let o = {
+        'name' : 'mary5544',
+        'city' : 'Daejeon',
+      };
+      console.log(o.contain('mary5544')); // true, false 
+    }());
+  </script>
+</body>
+</html>
